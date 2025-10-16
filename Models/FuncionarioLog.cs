@@ -6,6 +6,13 @@ namespace TrilhaNetAzureDesafio.Models
 {
     public class FuncionarioLog : Funcionario, ITableEntity
     {
+        public TipoAcao TipoAcao { get; set; }
+        public string JSON { get; set; }
+        public string PartitionKey { get; set; }
+        public string RowKey { get; set; }
+        public DateTimeOffset? Timestamp { get; set; }
+        public ETag ETag { get; set; }
+
         public FuncionarioLog() { }
 
         public FuncionarioLog(Funcionario funcionario, TipoAcao tipoAcao, string partitionKey, string rowKey)
@@ -23,12 +30,5 @@ namespace TrilhaNetAzureDesafio.Models
             PartitionKey = partitionKey;
             RowKey = rowKey;
         }
-
-        public TipoAcao TipoAcao { get; set; }
-        public string JSON { get; set; }
-        public string PartitionKey { get; set; }
-        public string RowKey { get; set; }
-        public DateTimeOffset? Timestamp { get; set; }
-        public ETag ETag { get; set; }
     }
 }
